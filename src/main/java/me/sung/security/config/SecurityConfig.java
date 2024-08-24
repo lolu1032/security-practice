@@ -21,7 +21,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((auth) -> auth
-                .requestMatchers("/","login").permitAll() // 아무조건없이 다 접속가능
+                .requestMatchers("/","login","loginProc","join","joinProc").permitAll() // 아무조건없이 다 접속가능
                 .requestMatchers("/admin").hasAnyRole("ADMIN") // admin이라는 룰이 있어야 접속가능
                 .requestMatchers("my/**").hasAnyRole("ADMIN","USER")
                 .anyRequest().authenticated()
