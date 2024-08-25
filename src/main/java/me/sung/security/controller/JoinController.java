@@ -18,7 +18,7 @@ public class JoinController {
         return "join";
     }
 
-    @PostMapping("joinProc")
+    @PostMapping("/joinProc")
     public String joinForm(JoinDTO joinDTO) {
 
         joinService.joinFrom(joinDTO);
